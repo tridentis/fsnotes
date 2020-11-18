@@ -21,10 +21,11 @@
 
         	body {
         		font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        		/*
         		margin: 0 auto;
                 padding: 0 20px;
         		width: 1024px;
-                max-width: 90%;
+                max-width: 90%;*/
         	}
 
         	footer {
@@ -33,7 +34,7 @@
         	}
 
         	a {
-        		color: #f6563a;
+        		color: #FF4136;
         	}
 
 			h3 {
@@ -81,7 +82,19 @@
 
 			.container {
 				max-width: 900px;
+				margin: 40px auto 40px auto;
+				padding: 0 20px;
+			}
+
+			.basic_container {
 				margin: 0 auto;
+				padding: 30px 0;
+				width: 900px;
+				max-width: 90%;
+			}
+
+			.wide_container {
+				background: #DDDDDD;
 			}
 
 			.ios-screens {
@@ -98,6 +111,8 @@
 					padding: 3px;
 					margin: 0;
 				}
+
+
             /* Portrait tablet to landscape and desktop */
             @media (min-width: 768px) and (max-width: 979px) {
                 max-width: 100%;
@@ -115,9 +130,11 @@
         </style>
     </head>
     <body>
+	<div class="container" style="margin-top: 20px">
     	<header>
-  			<a href="http://fsnot.es">
-  				<img class="fsnotes_logo" src="img/logo-2019.png"/>
+  			<a href="http://fsnot.es" style="text-decoration: none;">
+  				<img class="fsnotes_logo" src="img/icon.png" style="width: 104px" />
+  				<span style="font-size: 65px; line-height: 104px; vertical-align: middle;  text-decoration: none; font-family: Palatino; color: black">FSNotes</span>
   			</a>
   		</header>
 
@@ -126,7 +143,10 @@
 				<a href="#pricing">Pricing</a>
 			</li>
 			<li>
-				<a href="#features">Features</a>
+				<a href="#features">macOS</a>
+			</li>
+			<li>
+				<a href="#ios_features">iOS</a>
 			</li>
 			<li>
 				<a href="#community">Community</a>
@@ -138,13 +158,87 @@
 				<a href="https://github.com/glushchenko/fsnotes/wiki" target="_blank">Wiki</a>
 			</li>
 		</ul>
-  		<hr>
+  	</div>
+	<div class="wide_container">
+		<div class="basic_container">
+			<p>
+				FSNotes is modern notes manager for macOS and iOS. App respects open formats like GitHub Flavored Markdown, so you can easily write documents on iPhone and MacBook. 
+It's simple and blazing fast!
+			</p>
+
+			<h2 id="pricing">Pricing</h2>
+			<p>
+				FSNotes is an <a href="https://github.com/glushchenko/fsnotes" target="_blank">open source</a> project and is provided for free, but you can support development by buying application in Mac App Store for symbolic price.
+			</p>
+
+			<p>No subscriptions ever.</p>
+
+			<p style="text-align: center;">
+				<a href="https://itunes.apple.com/app/fsnotes/id1277179284">
+					<img src="img/badge-download-on-the-mac-app-store.svg" alt="">
+				</a>
+
+				<a href="https://itunes.apple.com/app/fsnotes-manager/id1346501102">
+					<img src="img/badge-download-on-the-app-store.svg" alt="">
+				</a>
+			</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<h3 style="text-align: center; margin: 0" id="features">Desktop and Mobile Apps</h3>
+
+		<p style="text-align: center;">
+			<img src="img/macOS-and-iOS.png?v=1.0" style="width: 900px; border-radius: 5px;" />
+		</p>		
+	</div>
+	<div class="wide_container">
+		<div class="basic_container">
+			<h3 style="text-align: center; margin: 0 0 30px 0">Supports the TextBundle Format</h3>
+
+			<table width="100%" class="pro">
+				<tr>
+					<td>Store images and text in one place with<br> <a href="http://textbundle.org" target="_blank">TextBundle containers</a> 🧳</td>
+					<td>Store notes secure with<br> <a href="https://github.com/glushchenko/fsnotes/wiki/Containers" target="_blank">Encrypted TextBundle containers</a> (AES-256) 🔐</td>
+				</tr>
+				<tr></tr>
+			</table>
+
+			<br>
+		</div>
+	</div>
+	<div class="container">
+		<h3 style="text-align: center; margin: 0 0 50px 0">Edit with TouchBar</h3>
+		<img class="center" src="img/touchbar.jpg" width="900" style="border-radius: 5px" alt="FSNotes Touch Bar on macOS"/>
+		<p style="text-align: center">Edit faster with virtual buttons on your TouchBar</p>
+	</div>
+	<div class="wide_container">
+		<div class="basic_container">
+
+		<h3 style="text-align: center; margin: 0 0 50px 0">Lock notes with TouchID</h3>
+		<img class="center" src="img/fingerprint.png" width="400" style="border-radius: 5px" alt="Fingerprint on macOS and iOS"/>
+		<p style="text-align: center">Encrypt and decrypt sensitive notes with one touch</p>
+
+		</div>
+	</div>
+
+	<div class="container">
+		<h3 style="text-align: center; margin: 0 0 50px 0">Dark Mode</h3>
+		<img class="center" src="img/darkmode.png" width="900" style="border-radius: 5px" alt="Dark Mode on macOS and iOS"/>
+		<p style="text-align: center">Balanced, polished dark theme</p>
+	</div>
+
+	<div class="wide_container">
+		<div class="basic_container">
+		<h3 style="text-align: center; margin: 10px 0 30px 0" id="git">Optional Git versioning and backups</h3>
+		<img class="center" src="img/git-preferences.png" width="300" style="border-radius: 5px" alt="Git versioning and scheduled backups"/>
+
+		<br>
+		</div>
+	</div>
 
 		<div class="container">
-			<p>FSNotes is modern notes manager for macOS and iOS.</p>
-
-		<div class="container">
-			<h2>Key features</h2>
+			<h2>Many more</h2>
 
 			<ul>
 				<li><strong>Markdown-first</strong>. Also supports plaintext and RTF files.</li>
@@ -165,75 +259,12 @@
 				<li><strong>Mermaid and MathJax</strong> support.</li>
 				<li>Optional <strong>Git versioning</strong> and <strong>backups</strong>.</li>
 			</ul>
-
 		</div>
 
-			<h2 id="pricing">Pricing</h2>
-			<p>
-				FSNotes is an <a href="https://github.com/glushchenko/fsnotes" target="_blank">open source</a> project and is provided for free, but you can support development by buying application in Mac App Store for symbolic price.
-			</p>
-
-			<p>No subscriptions ever.</p>
-
-			<p style="text-align: center;">
-				<a href="https://itunes.apple.com/app/fsnotes/id1277179284">
-					<img src="img/badge-download-on-the-mac-app-store.svg" alt="">
-				</a>
-
-				<a href="https://itunes.apple.com/app/fsnotes-manager/id1346501102">
-					<img src="img/badge-download-on-the-app-store.svg" alt="">
-				</a>
-			</p>
-			<p>
-				Install using Homebrew: <pre style="background: oldlace; padding: 5px; border-radius: 3px">brew cask install fsnotes</pre>
-			</p>
-		</div>
-
-		<hr class="s" />
-
-		<h3 style="text-align: center;" id="features">Desktop and Mobile Apps</h3>
-
-		<p style="text-align: center;">
-			<img src="img/macOS-and-iOS.png?v=1.0" style="width: 900px; border-radius: 5px;" />
-		</p>
-
-		<hr class="s">
-		<h3 style="text-align: center; margin: 50px 0 50px 0">Supports the TextBundle Format</h3>
-
-		<table width="100%" class="pro">
-			<tr>
-				<td>Store images and text in one place with<br> <a href="http://textbundle.org" target="_blank">TextBundle containers</a> 🧳</td>
-				<td>Store notes secure with<br> <a href="https://github.com/glushchenko/fsnotes/wiki/Containers" target="_blank">Encrypted TextBundle containers</a> (AES-256) 🔐</td>
-			</tr>
-			<tr></tr>
-		</table>
-
-		<hr class="s">
-
-		<h3 style="text-align: center; margin: 50px 0 50px 0">Edit with TouchBar</h3>
-		<img class="center" src="img/touchbar.jpg" width="900" style="border-radius: 5px" alt="FSNotes Touch Bar on macOS"/>
-		<p style="text-align: center">Edit faster with virtual buttons on your TouchBar</p>
-		<hr class="s">
-
-		<h3 style="text-align: center; margin: 50px 0 50px 0">Lock notes with TouchID</h3>
-		<img class="center" src="img/fingerprint.png" width="400" style="border-radius: 5px" alt="Fingerprint on macOS and iOS"/>
-		<p style="text-align: center">Encrypt and decrypt sensitive notes with one touch</p>
-		<hr class="s">
-
-		<h3 style="text-align: center; margin: 50px 0 50px 0">Dark Mode</h3>
-		<img class="center" src="img/darkmode.png" width="900" style="border-radius: 5px" alt="Dark Mode on macOS and iOS"/>
-		<p style="text-align: center">Balanced, polished dark theme</p>
-		<hr class="s">
-
-		<h3 style="text-align: center;" id="git">Optional Git versioning and backups</h3>
-		<img class="center" src="img/git-preferences.png" width="300" style="border-radius: 5px" alt="Git versioning and scheduled backups"/>
-
-		<hr class="s">
-
-		<hr />
-
-		<div class="container">
-			<h3>iOS app</h3>
+		<div class="wide_container">
+			<div class="basic_container">
+		
+			<h3 id="ios_features" style="margin: 10px 0 20px 0">FSNotes Manager for iOS</h3>
 			<ul class="ios-screens">
 				<li>
 					<img src="img/ios-screen.png?v=1.0" class="ios-screen" />
@@ -243,6 +274,7 @@
 				</li>
 			</ul>
 
+			<br>
 			<ul>
 				<li><strong>Sync via iCloud Drive</strong>.</li>
 				<li><strong>3D Touch</strong> and <strong>configurable keyboard.</strong></li>
@@ -253,11 +285,11 @@
 				<li><strong>Sharing</strong> extension.</li>
 				<li><strong>Encrypted note</strong> support.</li>
 			</ul>
+			</div>
 		</div>
 
-		<hr />
-		<h2 style="text-align: center" style="font-size: 25px" id="community">Community ⚒</h2>
-
+	<div class="container">
+		<h2 style="text-align: center; margin: 0" style="font-size: 25px; " id="community">Community ⚒</h2>
 
 		<table width="100%" class="pro">
 			<tr>
@@ -288,21 +320,41 @@
 			<tr></tr>
 		</table>
 
-		<br><br>
-		<p style="text-align: center">Thanks to all FSNotes <a href="https://github.com/glushchenko/fsnotes/graphs/contributors">contributors</a> who helped me, especially <a href="https://github.com/jeff-h" target="_blank">@jeff-h</a>, <a href="https://github.com/gingerbeardman" target="_blank">@gingerbeardman</a>, <a href="https://github.com/baranpirincal" target="_blank">@baranpirincal</a>, <a href="https://github.com/peavine" target="_blank">@peavine</a>, <a href="https://github.com/buddax2" target="_blank">@buddax2</a>, Michael Barzmann for Deutsch translation,
+		<br>
+
+		<p style="text-align: center; margin-bottom: 0">Thanks to all FSNotes <a href="https://github.com/glushchenko/fsnotes/graphs/contributors">contributors</a> who helped me, especially <a href="https://github.com/jeff-h" target="_blank">@jeff-h</a>, <a href="https://github.com/gingerbeardman" target="_blank">@gingerbeardman</a>, <a href="https://github.com/baranpirincal" target="_blank">@baranpirincal</a>, <a href="https://github.com/peavine" target="_blank">@peavine</a>, <a href="https://github.com/buddax2" target="_blank">@buddax2</a>, Michael Barzmann for Deutsch translation,
 			<a href="https://github.com/aonez">aonez</a> for Spanish.
 		</p>
 
-		<hr />
-
-		<h2 style="text-align: center" id="feedback">Feedback ✉</h2>
+	</div>
+	<br>
+	<div class="wide_container">
+		<div class="basic_container">
+		<h2 style="text-align: center; margin: 0" id="feedback">Feedback</h2>
 
 		<p style="text-align: center">Please feel free to send feedback and questions by email to <a href="mailto: support@fsnot.es">support@fsnot.es</a></p>
 
-		<hr style="margin-bottom: 20px">
+		<br>
 
-		<footer>© Oleksandr Glushchenko, 2017–2020 FSNotes</footer>
+		<h2 style="text-align: center">Mac App Store & App Store</h2>
 
+		<p style="text-align: center;">
+			<a href="https://itunes.apple.com/app/fsnotes/id1277179284">
+				<img src="img/badge-download-on-the-mac-app-store.svg" alt="">
+			</a>
+
+			<a href="https://itunes.apple.com/app/fsnotes-manager/id1346501102">
+				<img src="img/badge-download-on-the-app-store.svg" alt="">
+			</a>
+		</p>
+		</div>
+	</div>
+		<br>
+		<br>
+
+		<footer style="padding: 0 20px;">© Oleksandr Hlushchenko, 2017–2020 FSNotes</footer>
+		<br>
+	
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
