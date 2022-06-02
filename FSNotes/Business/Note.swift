@@ -1036,7 +1036,7 @@ public class Note: NSObject  {
             {
                 "transient" : true,
                 "type" : "\(type.uti)",
-                "creatorIdentifier" : "co.fluder.fsnotes",
+                "creatorIdentifier" : "com.redrainlab.fsnotes",
                 "version" : 2,
                 "flatExtension" : "\(originalExtension)"
             }
@@ -1047,7 +1047,7 @@ public class Note: NSObject  {
         {
             "transient" : true,
             "type" : "\(type.uti)",
-            "creatorIdentifier" : "co.fluder.fsnotes",
+            "creatorIdentifier" : "com.redrainlab.fsnotes",
             "version" : 2
         }
         """
@@ -2060,7 +2060,7 @@ public class Note: NSObject  {
     public func getCursorPosition() -> Int? {
         var position: Int?
 
-        if let data = try? url.extendedAttribute(forName: "co.fluder.fsnotes.cursor") {
+        if let data = try? url.extendedAttribute(forName: "com.redrainlab.fsnotes.cursor") {
             position = data.withUnsafeBytes { (ptr: UnsafeRawBufferPointer) -> Int in
                 ptr.load(as: Int.self)
             }

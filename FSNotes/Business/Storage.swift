@@ -1151,7 +1151,7 @@ class Storage {
             }
 
             let keyStore = NSUbiquitousKeyValueStore()
-            keyStore.set(names, forKey: "co.fluder.fsnotes.pins.shared")
+            keyStore.set(names, forKey: "com.redrainlab.fsnotes.pins.shared")
             keyStore.synchronize()
 
             print("Pins successfully saved: \(names)")
@@ -1165,7 +1165,7 @@ class Storage {
 
         var success = [Note]()
 
-        guard let names = keyStore.array(forKey: "co.fluder.fsnotes.pins.shared") as? [String]
+        guard let names = keyStore.array(forKey: "com.redrainlab.fsnotes.pins.shared") as? [String]
             else { return }
 
         for note in notes {
@@ -1184,7 +1184,7 @@ class Storage {
         let keyStore = NSUbiquitousKeyValueStore()
         keyStore.synchronize()
         
-        if let names = keyStore.array(forKey: "co.fluder.fsnotes.pins.shared") as? [String] {
+        if let names = keyStore.array(forKey: "com.redrainlab.fsnotes.pins.shared") as? [String] {
             if let pinned = getPinned() {
                 for note in pinned {
                     if !names.contains(note.name) {

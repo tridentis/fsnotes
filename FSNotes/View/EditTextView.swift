@@ -689,8 +689,8 @@ class EditTextView: NSTextView, NSTextFinderClient, NSSharingServicePickerDelega
         if type == NSPasteboard.attributedTextType {
             let richString = attributedString.unLoadCheckboxes()
 
-            let imageKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.url")
-            let pathKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.path")
+            let imageKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.url")
+            let pathKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.path")
 
             richString.enumerateAttribute(.attachment, in: NSMakeRange(0,(richString.length)), options: .reverse, using:  {(_ value: Any?, _ range: NSRange, _ stop: UnsafeMutablePointer<ObjCBool>) -> Void in
 
@@ -889,7 +889,7 @@ class EditTextView: NSTextView, NSTextFinderClient, NSSharingServicePickerDelega
                 return
             }
 
-            let filePathKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.path")
+            let filePathKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.path")
 
             if (storage.attribute(filePathKey, at: range.location, effectiveRange: nil) as? String) != nil {
                 return
@@ -1542,7 +1542,7 @@ class EditTextView: NSTextView, NSTextFinderClient, NSSharingServicePickerDelega
         
         var length = range.lowerBound
         let data = Data(bytes: &length, count: MemoryLayout.size(ofValue: length))
-        try? note.url.setExtendedAttribute(data: data, forName: "co.fluder.fsnotes.cursor")
+        try? note.url.setExtendedAttribute(data: data, forName: "com.redrainlab.fsnotes.cursor")
     }
     
     func restoreCursorPosition() {
@@ -1639,9 +1639,9 @@ class EditTextView: NSTextView, NSTextFinderClient, NSSharingServicePickerDelega
             let dropPoint = convert(sender.draggingLocation, from: nil)
             let caretLocation = characterIndexForInsertion(at: dropPoint)
             
-            let filePathKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.path")
-            let titleKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.title")
-            let positionKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.position")
+            let filePathKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.path")
+            let titleKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.title")
+            let positionKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.position")
             
             guard
                 let path = attributedText.attribute(filePathKey, at: 0, effectiveRange: nil) as? String,
@@ -2002,7 +2002,7 @@ class EditTextView: NSTextView, NSTextFinderClient, NSSharingServicePickerDelega
         guard let selected = attributedSubstring(forProposedRange: selectedRange(), actualRange: nil) else { return .generic }
         
         let attributedString = NSMutableAttributedString(attributedString: selected)
-        let positionKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.position")
+        let positionKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.position")
         attributedString.addAttribute(positionKey, value: selectedRange().location, range: NSRange(0..<1))
         
         let data = NSKeyedArchiver.archivedData(withRootObject: attributedString)
@@ -2052,8 +2052,8 @@ class EditTextView: NSTextView, NSTextFinderClient, NSSharingServicePickerDelega
             return
         }
         
-        let titleKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.title")
-        let pathKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.path")
+        let titleKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.title")
+        let pathKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.path")
 
         if let event = NSApp.currentEvent,
             !event.modifierFlags.contains(.command),
@@ -2257,7 +2257,7 @@ class EditTextView: NSTextView, NSTextFinderClient, NSSharingServicePickerDelega
         storage.enumerateAttribute(.attachment, in: checkRange) { (value, range, _) in
             if let _ = value as? NSTextAttachment, storage.attribute(.todo, at: range.location, effectiveRange: nil) == nil {
 
-                let filePathKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.path")
+                let filePathKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.path")
 
                 if let filePath = storage.attribute(filePathKey, at: range.location, effectiveRange: nil) as? String {
 

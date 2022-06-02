@@ -616,7 +616,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UIGestureRecognizer
     @objc func ubiquitousKeyValueStoreDidChange(notification: NSNotification) {
         if let keys = notification.userInfo?[NSUbiquitousKeyValueStoreChangedKeysKey] as? [String] {
             for key in keys {
-                if key == "co.fluder.fsnotes.pins.shared" {
+                if key == "com.redrainlab.fsnotes.pins.shared" {
                     let result = storage.restoreCloudPins()
 
                     DispatchQueue.main.async {

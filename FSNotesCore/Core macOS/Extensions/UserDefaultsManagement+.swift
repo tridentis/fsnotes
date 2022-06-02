@@ -200,7 +200,7 @@ extension UserDefaultsManagement {
 
     static var projects: [URL] {
         get {
-            guard let defaults = UserDefaults.init(suiteName: "group.es.fsnot.user.defaults") else { return [] }
+            guard let defaults = UserDefaults.init(suiteName: "group.com.redrainlab.fsnotes.user.defaults") else { return [] }
 
             if let result = defaults.object(forKey: Constants.ProjectsKey) as? Data, let urls = NSKeyedUnarchiver.unarchiveObject(with: result) as? [URL] {
                 return urls
@@ -209,7 +209,7 @@ extension UserDefaultsManagement {
             return []
         }
         set {
-            guard let defaults = UserDefaults.init(suiteName: "group.es.fsnot.user.defaults") else { return }
+            guard let defaults = UserDefaults.init(suiteName: "group.com.redrainlab.fsnotes.user.defaults") else { return }
 
             let data = NSKeyedArchiver.archivedData(withRootObject: newValue)
             defaults.set(data, forKey: Constants.ProjectsKey)

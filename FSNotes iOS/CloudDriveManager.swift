@@ -20,7 +20,7 @@ class CloudDriveManager {
     private var resultsDict = NSMutableDictionary()
     private let workerQueue: OperationQueue = {
         let workerQueue = OperationQueue()
-        workerQueue.name = "co.fluder.fsnotes.manager.browserdatasource.workerQueue"
+        workerQueue.name = "com.redrainlab.fsnotes.manager.browserdatasource.workerQueue"
         workerQueue.maxConcurrentOperationCount = 1
         workerQueue.qualityOfService = .background
         return workerQueue

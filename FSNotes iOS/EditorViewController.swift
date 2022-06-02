@@ -617,7 +617,7 @@ class EditorViewController: UIViewController, UITextViewDelegate, UIDocumentPick
         storage.enumerateAttribute(.attachment, in: checkRange) { (value, range, _) in
             if let _ = value as? NSTextAttachment, storage.attribute(.todo, at: range.location, effectiveRange: nil) == nil {
 
-                let filePathKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.path")
+                let filePathKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.path")
 
                 if let filePath = storage.attribute(filePathKey, at: range.location, effectiveRange: nil) as? String {
 
@@ -664,7 +664,7 @@ class EditorViewController: UIViewController, UITextViewDelegate, UIDocumentPick
         let paragraphRange = string.paragraphRange(for: range)
         let paragraph = editArea.textStorage.attributedSubstring(from: paragraphRange)
 
-        if paragraph.length > 0, let attachment = paragraph.attribute(NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.todo"), at: 0, effectiveRange: nil) as? Int, attachment == 1 {
+        if paragraph.length > 0, let attachment = paragraph.attribute(NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.todo"), at: 0, effectiveRange: nil) as? Int, attachment == 1 {
             editArea.typingAttributes[.strikethroughStyle] = 1
         } else {
             editArea.typingAttributes.removeValue(forKey: .strikethroughStyle)
@@ -1371,7 +1371,7 @@ class EditorViewController: UIViewController, UITextViewDelegate, UIDocumentPick
 //                return
 //            }
 
-            let pathKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.path")
+            let pathKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.path")
 
             guard let path = myTextView.textStorage.attribute(pathKey, at: characterIndex, effectiveRange: nil) as? String, let note = self.note, let url = note.getImageUrl(imageName: path) else { return }
 
@@ -1627,7 +1627,7 @@ class EditorViewController: UIViewController, UITextViewDelegate, UIDocumentPick
             }
 
             if interaction == .presentActions {
-                let pathKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.path")
+                let pathKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.path")
                 if nil != textView.textStorage.attribute(pathKey, at: characterRange.location, effectiveRange: nil) {
                     return false
                 }
@@ -1639,7 +1639,7 @@ class EditorViewController: UIViewController, UITextViewDelegate, UIDocumentPick
         }
 
         // Skip images (fixes glitch bug)
-        let pathKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.path")
+        let pathKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.path")
         let attr = textView.textStorage.attribute(pathKey, at: characterRange.location, effectiveRange: nil)
 
         if attr != nil && !textView.isFirstResponder {

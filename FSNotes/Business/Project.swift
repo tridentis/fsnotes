@@ -252,7 +252,7 @@ public class Project: Equatable {
         let keyStore = NSUbiquitousKeyValueStore()
         keyStore.synchronize()
 
-        if let names = keyStore.array(forKey: "co.fluder.fsnotes.pins.shared") as? [String] {
+        if let names = keyStore.array(forKey: "com.redrainlab.fsnotes.pins.shared") as? [String] {
             for name in names {
                 if let note = notes.first(where: { $0.name == name }) {
                     note.isPinned = true

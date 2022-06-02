@@ -222,7 +222,7 @@ extension NSTextStorage: NSTextStorageDelegate {
         enumerateAttribute(.attachment, in: affectedRange) { (value, range, stop) in
             if value as? NSTextAttachment != nil, attribute(.todo, at: range.location, effectiveRange: nil) == nil {
 
-                let pathKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.url")
+                let pathKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.url")
                 if let result = attribute(pathKey, at: range.location, effectiveRange: nil) as? URL, url.path == result.path {
 
                     foundRange = range
@@ -255,7 +255,7 @@ extension NSTextStorage: NSTextStorageDelegate {
                     textStorage.addAttribute(.paragraphStyle, value: paragraph, range: range)
                 #endif
 
-                let imageKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.url")
+                let imageKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.url")
                 if let url = textStorage.attribute(imageKey, at: range.location, effectiveRange: nil) as? URL {
                     loadImage(attachment: value, url: url, range: range)
                 }

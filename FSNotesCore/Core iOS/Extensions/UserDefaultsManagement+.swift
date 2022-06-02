@@ -214,7 +214,7 @@ extension UserDefaultsManagement {
     @available(iOS 11.0, *)
     static var importURLs: [URL] {
         get {
-            guard let defaults = UserDefaults.init(suiteName: "group.es.fsnot.user.defaults") else { return [] }
+            guard let defaults = UserDefaults.init(suiteName: "group.com.redrainlab.fsnotes.user.defaults") else { return [] }
 
             if let result = defaults.object(forKey: Constants.ImportURLsKey) as? Data,
                 let urls = NSArray.unsecureUnarchived(from: result) as? [URL] {
@@ -224,7 +224,7 @@ extension UserDefaultsManagement {
             return []
         }
         set {
-            guard let defaults = UserDefaults.init(suiteName: "group.es.fsnot.user.defaults") else { return }
+            guard let defaults = UserDefaults.init(suiteName: "group.com.redrainlab.fsnotes.user.defaults") else { return }
 
             if let data = try? NSKeyedArchiver.archivedData(withRootObject: newValue, requiringSecureCoding: false) {
                 defaults.set(data, forKey: Constants.ImportURLsKey)
@@ -247,7 +247,7 @@ extension UserDefaultsManagement {
     @available(iOS 11.0, *)
     static var projects: [URL] {
         get {
-            guard let defaults = UserDefaults.init(suiteName: "group.es.fsnot.user.defaults") else { return [] }
+            guard let defaults = UserDefaults.init(suiteName: "group.com.redrainlab.fsnotes.user.defaults") else { return [] }
 
             if let data = defaults.data(forKey: Constants.ProjectsKeyNew), let urls = try? NSKeyedUnarchiver.unarchivedObject(ofClasses: [NSArray.self, NSURL.self], from: data) as? [URL] {
                 return urls
@@ -256,7 +256,7 @@ extension UserDefaultsManagement {
             return []
         }
         set {
-            guard let defaults = UserDefaults.init(suiteName: "group.es.fsnot.user.defaults") else { return }
+            guard let defaults = UserDefaults.init(suiteName: "group.com.redrainlab.fsnotes.user.defaults") else { return }
 
             if let data = try? NSKeyedArchiver.archivedData(withRootObject: newValue, requiringSecureCoding: false) {
                 defaults.set(data, forKey: Constants.ProjectsKeyNew)

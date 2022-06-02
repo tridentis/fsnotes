@@ -2217,7 +2217,7 @@ class ViewController: NSViewController,
     @objc func ubiquitousKeyValueStoreDidChange(notification: NSNotification) {
         if let keys = notification.userInfo?[NSUbiquitousKeyValueStoreChangedKeysKey] as? [String] {
             for key in keys {
-                if key == "co.fluder.fsnotes.pins.shared" {
+                if key == "com.redrainlab.fsnotes.pins.shared" {
                     let changedNotes = storage.restoreCloudPins()
 
                     if let notes = changedNotes.added {

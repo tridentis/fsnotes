@@ -130,7 +130,7 @@ class EditTextView: UITextView, UITextViewDelegate {
 
         let attributedString = NSMutableAttributedString(attributedString: self.textStorage.attributedSubstring(from: self.selectedRange)).unLoadCheckboxes()
 
-        let pathKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.path")
+        let pathKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.path")
         if self.selectedRange.length == 1, let path = attributedString.attribute(pathKey, at: 0, effectiveRange: nil) as? String,
             let imageUrl = note.getImageUrl(imageName: path),
             let data = try? Data(contentsOf: imageUrl),
@@ -240,7 +240,7 @@ class EditTextView: UITextView, UITextViewDelegate {
 
         let attributedString = NSMutableAttributedString(attributedString: self.textStorage.attributedSubstring(from: self.selectedRange)).unLoadCheckboxes()
 
-        let pathKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.path")
+        let pathKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.path")
         if self.selectedRange.length == 1, let path = attributedString.attribute(pathKey, at: 0, effectiveRange: nil) as? String {
 
             DispatchQueue.global().async {
@@ -383,7 +383,7 @@ class EditTextView: UITextView, UITextViewDelegate {
     public func isImage(at location: Int) -> Bool {
         let storage = self.textStorage
 
-        let pathKey = NSAttributedString.Key(rawValue: "co.fluder.fsnotes.image.path")
+        let pathKey = NSAttributedString.Key(rawValue: "com.redrainlab.fsnotes.image.path")
 
         if storage.length > location, storage.attribute(pathKey, at: location, effectiveRange: nil) != nil {
             return true

@@ -89,7 +89,7 @@
 			<key>CFBundleURLIconFile</key>
 			<string>makeNote</string>
 			<key>CFBundleURLName</key>
-			<string>co.fluder.mobile.FSNotes-iOS</string>
+			<string>com.redrainlab.mobile.FSNotes-iOS</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fsnotes</string>
@@ -101,7 +101,7 @@
 			<key>CFBundleURLIconFile</key>
 			<string>makeNote</string>
 			<key>CFBundleURLName</key>
-			<string>co.fluder.mobile.FSNotes-iOS</string>
+			<string>com.redrainlab.mobile.FSNotes-iOS</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>nv</string>
@@ -113,7 +113,7 @@
 			<key>CFBundleURLIconFile</key>
 			<string>makeNote</string>
 			<key>CFBundleURLName</key>
-			<string>co.fluder.mobile.FSNotes-iOS</string>
+			<string>com.redrainlab.mobile.FSNotes-iOS</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>nvalt</string>
@@ -147,7 +147,7 @@
 	<string>Needs for attach images in notes</string>
 	<key>NSUbiquitousContainers</key>
 	<dict>
-		<key>iCloud.co.fluder.fsnotes</key>
+		<key>iCloud.com.redrainlab.fsnotes</key>
 		<dict>
 			<key>NSUbiquitousContainerIsDocumentScopePublic</key>
 			<true/>
